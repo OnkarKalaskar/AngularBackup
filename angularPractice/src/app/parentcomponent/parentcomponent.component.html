@@ -1,0 +1,10 @@
+
+<p>select category</p>
+<div *ngFor="let cat of categories">
+    <button (click)="callChildComponent(cat)">{{cat}}</button><br>
+</div>
+
+<div *ngIf="display">
+    <app-childcomponent [taskCategory]="choosenCategory"></app-childcomponent>
+</div>
+

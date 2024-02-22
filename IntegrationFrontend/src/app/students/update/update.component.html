@@ -1,0 +1,25 @@
+
+
+<div class="container">
+    <legend>Update</legend>
+    <form action="">
+        <div class="mb-3">
+            <label for="name" class="form-label">name</label>
+            <input type="text" name="name" [(ngModel)]='updatedStud.name' id="name" class="form-control" placeholder='{{existingDetails.name}}'/>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label> 
+            <input type="text" name="age" [(ngModel)]='updatedStud.age' id="age" class="form-control" placeholder='{{existingDetails.age}}' />
+        </div>
+        <div class="mb-3">
+            <label for="txtname" class="form-label">city</label>
+            <input type="text" name="city" [(ngModel)]='updatedStud.city' id="city" class="form-control" placeholder='{{existingDetails.city}}'/>
+        </div>
+        <button type="button" (click)="updateUser()" class="btn btn-danger">submit</button>
+    </form>
+</div>
+
+<div *ngIf = "flag">
+    <h2>User updated successfully</h2>
+    <button type="button" class="btn btn-danger" routerLink="">go to home</button>
+</div>

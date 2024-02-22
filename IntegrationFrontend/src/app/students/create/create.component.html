@@ -1,0 +1,33 @@
+<p>create works!</p>
+
+<div class="container">
+    <legend>Create</legend>
+    <form action="" [formGroup]= "registrationForm" (ngSubmit)="submitForm()">
+        <div class="mb-3">
+            <label for="txtname" class="form-label">name</label>
+            <input type="text" name="name" id="name" class="form-control" formControlName="name" />
+            <div *ngIf = "registrationForm.get('name')?.hasError && isSubmitted">
+                <span>Enter valid name</span>
+                <div *ngIf = "registrationForm.get('name')?.hasError('pattern')">
+                    <span style="color: red;">Enter valid string!!!!</span>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="txtage" class="form-label">Age</label>
+            <input type="text" name="age"  id="age" class="form-control" formControlName="age"/>
+            <div *ngIf = "registrationForm.get('age')?.hasError && isSubmitted">
+                <span>Enter valid age</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="txtname" class="form-label">city</label>
+            <input type="text" name="city"  id="city" class="form-control" formControlName="city"/>
+            <div *ngIf = "registrationForm.get('city')?.hasError && isSubmitted">
+                <span>Enter valid city</span> 
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-danger" >submit</button>
+    </form>
+</div>

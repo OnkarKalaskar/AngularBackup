@@ -1,0 +1,17 @@
+
+<br><br><br><br><br>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Serial no</th>
+        <th scope="col">salary</th>
+      </tr>
+    </thead>
+    <tbody class="Branch">
+      <tr *ngFor="let Branch of Branches">
+        <td scope="row">{{Branch.id}}</td>
+        <td>{{Branch.branchName}}</td>
+      </tr>
+    </tbody>
+  </table>

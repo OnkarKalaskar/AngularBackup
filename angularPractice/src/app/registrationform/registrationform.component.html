@@ -1,0 +1,161 @@
+<!-- 
+<div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div> -->
+  <mat-accordion class="example-headers-align" multi>
+
+    <!-- personal details -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal details
+        </mat-panel-title>
+        <mat-panel-description>
+          Enter personal details
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <form [formGroup]="personalDetailsForm" (ngSubmit)="submitPersonalDetails()">
+      <div style="display: flex; flex-wrap: wrap;">
+      <mat-form-field class="example-full-width">
+        <mat-label>First name</mat-label>
+        <input matInput type="text" formControlName="firstName" name="firstName" class="form-control">
+        <div *ngIf="personalDetailsForm.get('firstName')?.errors && isSubmitted">
+          <span style="color: red;">Enter firstname</span>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Last name</mat-label>
+        <input matInput type="text" formControlName="lname" name="lname" class="form-control">
+        <div *ngIf="personalDetailsForm.get('lname')?.errors && isSubmitted">
+          <span style="color: red;">Enter lastname</span>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" name="email" class="form-control">
+        <div *ngIf="personalDetailsForm.get('email')?.errors && isSubmitted">
+          <div *ngIf="personalDetailsForm.get('email')?.hasError('pattern')">
+            <span style="color: red;">Enter valid email </span>
+          </div>
+          <span style="color: red;">Enter email</span>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" style="width: 70%;">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" name="password" class="form-control">
+        <div *ngIf="personalDetailsForm.get('password')?.errors && isSubmitted">
+          <span style="color: red;">Enter password</span>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" style="width: 70%;">
+        <mat-label>confirm password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" name="confirmPassword" class="form-control">
+        <div *ngIf="personalDetailsForm.errors?.['PasswordNoMatch']">
+          <span style="color: red;">password not matching!!!!</span>
+        </div> 
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Date of birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthDate" name="birthDate" class="form-control">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <div *ngIf="personalDetailsForm.get('birthDate')?.errors && isSubmitted">
+          <span style="color: red;">Enter date</span>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Select gender</mat-label>
+        <mat-select formControlName="gender"> 
+          <mat-option value="Male" >Male</mat-option>
+          <mat-option value="Female" >Female</mat-option>
+          <mat-option value="Others" >Others</mat-option>
+        </mat-select>
+        <div *ngIf="personalDetailsForm.get('gender')?.errors && isSubmitted">
+          <span style="color: red;">select gender</span>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" formControlName="address" name="address" class="form-control">
+        <div *ngIf="personalDetailsForm.get('address')?.errors && isSubmitted">
+          <span style="color: red;">Enter Address</span>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Pincode</mat-label>
+        <input matInput type="number" formControlName="pincode" name="pincode" class="form-control">
+        <div *ngIf="personalDetailsForm.get('pincode')?.errors && isSubmitted">
+          <div *ngIf="personalDetailsForm.get('pincode')?.hasError('required')" >
+            <span style="color: red;">Enter pincode</span>
+          </div>
+          <div *ngIf="personalDetailsForm.get('pincode')?.hasError('min')">
+            <span style="color: red;">Pincode should be of 6 digits</span>
+          </div>
+          
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>mobile</mat-label>
+        <input matInput type="number" formControlName="mobile" name="mobile" class="form-control">
+        <div *ngIf="personalDetailsForm.get('mobile')?.errors && isSubmitted">
+          <div *ngIf="personalDetailsForm.get('mobile')?.hasError('required')">
+            <span style="color: red;">Enter mobile number</span>
+          </div>
+        <div *ngIf="personalDetailsForm.get('mobile')?.hasError('max')" >
+          <div style="color: red;">Mobile number should be 10 digit</div>
+        </div>
+        <div *ngIf="personalDetailsForm.get('mobile')?.hasError('min')" >
+          <div style="color: red;">Mobile number should be 10 digit</div>
+        </div>
+      </div>
+      </mat-form-field>
+
+      <button mat-raised-button type="submit" color="submit">submit</button>
+    </div>
+    </form>
+    </mat-expansion-panel>
+
+    <!-- educational details -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Educational Details
+        </mat-panel-title>
+        <mat-panel-description>
+          Enter educational details starting from 10th to higher studies
+          <mat-icon>work</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Day of the trip
+        </mat-panel-title>
+        <mat-panel-description>
+          Inform the date you wish to travel
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+  

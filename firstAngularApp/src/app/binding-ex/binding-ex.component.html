@@ -1,0 +1,14 @@
+
+<p>Event binding</p>
+<button (click) = "disable()">{{ item }}</button>
+<p *ngIf = "isDisabled">Hello there</p>
+
+<br/>
+<p>Number is : {{ value }}</p>
+<p>Date is : {{ date }}</p>
+
+<br/>
+<button (click) = "myShow()">To see alert</button>
+
+<br/>
+<img [src] = "imageUrl">

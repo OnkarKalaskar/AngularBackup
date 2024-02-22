@@ -1,0 +1,69 @@
+<!-- <p>addcustomer works!</p> -->
+
+<h1>Add customer and display functionality</h1>
+<div class="parentDiv">
+    <div class="row g-3 needs-validation mx-auto" id="myform">
+        <h3 class="text-center">Add customer</h3>
+        <form [formGroup]="myform"  (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="customerName" class="form-control" formControlName="customerName" placeholder="customerName">
+                <div *ngIf="myform.get('customerName')?.errors && isSubmitted">
+                    <div *ngIf="myform.get('customerName')?.hasError">
+                        <span style="color: red;">Please enter name</span>
+                    </div>
+                    <div *ngIf="myform.get('customerName')?.hasError('pattern')">
+                        <span style="color: red;">Only characters allowed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                <input type="number" name="age" class="form-control" formControlName="age" placeholder="age">
+                <div *ngIf="myform.get('age')?.errors && isSubmitted">
+                    <div *ngIf="myform.get('age')?.hasError">
+                        <span style="color: red;">Please enter age</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Salary</label>
+                <input type="number" name="salary" class="form-control" formControlName="salary" placeholder="salary">
+                <div *ngIf="myform.get('salary')?.errors && isSubmitted">
+                    <div *ngIf="myform.get('salary')?.hasError">
+                        <span style="color: red;">Please enter salary</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">City</label>
+                <input type="text" name="city" class="form-control" formControlName="city" placeholder="city">
+                <div *ngIf="myform.get('city')?.errors && isSubmitted">
+                    <div *ngIf="myform.get('city')?.hasError">
+                        <span style="color: red;">Please enter City</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Branch</label>
+                <input type="text" name="branch" class="form-control" formControlName="branch" placeholder="branch">
+                <div *ngIf="myform.get('branch')?.errors && isSubmitted">
+                    <div *ngIf="myform.get('branch')?.hasError">
+                        <span style="color: red;">Please enter Branch</span>
+                    </div>
+                </div>
+            </div>
+    
+            <button type="submit" class="btn btn-dark mt-4">Register</button>
+        </form>
+    </div>
+
+    <div>
+        <app-displaydata [customerArray]="allCustomers"></app-displaydata>
+    </div>
+</div>
+
+
+
+
+

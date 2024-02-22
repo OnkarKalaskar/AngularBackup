@@ -1,0 +1,33 @@
+<style>
+    .cards{
+      margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+    .card{
+        height: 20rem; 
+        border: solid 2px;
+    }
+    .card>img{
+        height: 150px;
+    }
+</style>
+<br/>
+<h2>Products</h2>
+  <div class="cards mt-2" >
+    <div class="card" style="width: auto;"  *ngFor ="let product of productData">
+        <img src={{product.path}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.productName}}</h5>
+          <p class="card-text">{{product.price}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+</div>
+<br/><br/><br/>
+
+
+
+
+

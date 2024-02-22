@@ -1,0 +1,26 @@
+
+<br><br>
+<h1>Full names of employee</h1>
+<!-- <div *ngFor = "let obj of models">
+    <p>{{obj | fullName}}</p>
+</div> -->
+<table border="2">
+    <div *ngFor = "let obj of models">
+        <tr>{{obj | fullName}}</tr>
+    </div>    
+</table>
+
+<h2>Employee Details</h2>
+<div *ngFor = "let obj of models">
+    <p>{{obj | details}}</p>
+</div>
+
+<h2>Uppercase</h2>
+<div *ngFor = "let obj of models">
+    <p>{{obj | details | uppercase}}</p>
+</div>
+
+<h3>Set image</h3>
+<img src="../../assets/auto1.jpg">
+
+

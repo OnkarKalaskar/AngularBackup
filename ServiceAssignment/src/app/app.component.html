@@ -1,0 +1,59 @@
+
+
+<style>
+  a{
+    color: white;
+    text-decoration: none;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+  <h2><a class="nav-link" routerLink="/home" routerLinkActive="active" >
+    AnyBuy.in
+  </a></h2>
+  <div class="collapse navbar-collapse justify-content-center">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addition" routerLinkActive="active" >
+          addition
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/substraction" routerLinkActive="active" >
+          substraction
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/multiplication" routerLinkActive="active" >
+          multiplication
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/division" routerLinkActive="active" >
+          division
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Employees" routerLinkActive="active" >
+          Employees
+        </a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/salary" routerLinkActive="active" >
+          salary
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/branches" routerLinkActive="active" >
+          branches
+        </a>
+      </li>     
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,23 @@
+<p>displaydata works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Salary</th>
+        <th scope="col">City</th>
+        <th scope="col">Branch</th>
+      </tr>
+    </thead>
+    <tbody >
+            <tr *ngFor="let customer of customerArray">
+                <th scope="row">{{customer.customerId}}</th>
+                <td>{{customer.customerName}}</td>
+                <td>{{customer.age}}</td>
+                <td>{{customer.salary}}</td>
+                <td>{{customer.city}}</td>
+                <td>{{customer.branch}}</td>
+              </tr>
+    </tbody>
+  </table>

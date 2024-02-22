@@ -1,0 +1,34 @@
+
+
+<h1>Enter ID to to get user details</h1>
+<form action="">
+    <div class="mb-3">
+        <label for="txtid" class="form-label">Id</label>
+        <input type="number" name="id" [(ngModel)]='sId' id="id" class="form-control" />
+    </div>
+    <button type="button" (click)="getById()" class="btn btn-danger">submit</button>
+</form>
+
+<div *ngIf="flag">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">name</th>
+            <th scope="col">age</th>
+            <th scope="col">city</th>
+          </tr>
+        </thead>
+        <tbody class="student">
+          <tr>
+            <td scope="row">{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.city}}</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+   
+
+

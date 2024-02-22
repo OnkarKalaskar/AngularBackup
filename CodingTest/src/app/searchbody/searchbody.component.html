@@ -1,0 +1,23 @@
+<br><br>
+<h1>Search functionality</h1>
+<br><br>
+<h2>Search based on name, age, branch</h2>
+<div class="d-flex">
+    <input class="form-control me-2 w-50" type="search" placeholder="Search" [(ngModel)]="searchKey1">
+    <a class="btn btn-secondary" (click)="generalSearch()" role="button">Search</a>
+  </div>
+<br><br>
+
+<h2>Search by id</h2>
+<div class="d-flex">
+    <input class="form-control me-2 w-50" type="search" placeholder="Search" [(ngModel)]="searchKey">
+    <a class="btn btn-secondary" (click)="getSearchResultById()" role="button">Search</a>
+  </div>
+  <br><br>
+
+<h2>Search by age</h2>
+<div class="d-flex">
+  <input class="form-control me-2 w-50" type="search" placeholder="Search" [(ngModel)]="searchKey2">
+  <a class="btn btn-secondary" (click)="getSearchResultByAge()" role="button">Search</a>
+</div>
+<br><br>

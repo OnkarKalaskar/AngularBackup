@@ -1,0 +1,72 @@
+
+<br><br><br><br>
+<div class="container">
+    <h3 class="well">Registration Form</h3>
+    <div class="row">
+      <form [formGroup]="form1" (ngSubmit)="onRegistrationFormSubmit()">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Enter Name Here.." formControlName="Name" />
+              <div *ngIf="form1.get('Name')?.errors  && isSubmitted">
+                <div *ngIf="form1.get('Name')?.hasError('requied')">
+                  <span style="color: red;">Please Enter the Name.</span>
+                </div>
+                <div *ngIf="form1.get('Name')?.hasError('minlength')">
+                  <span style="color: red;">Please enter 3 digit.</span>
+                </div>
+              </div>
+            </div>       
+          </div>      
+          <div>
+        </div>     
+      </div>
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Email Address</label>
+          <input type="text" placeholder="Enter Email Address Here.." formControlName="Email" class="form-control" />
+          <div *ngIf="form1.get('Email')?.errors  && isSubmitted">
+            <div *ngIf="form1.get('Email')?.hasError('required')">
+              <span style="color: red;">Please Enter Email.</span>
+            </div>
+            <div *ngIf="form1.get('Email')?.hasError('minlength')">
+              <span style="color: red;">The email requied atleast 5 characters.</span>
+            </div>
+            <div *ngIf="form1.get('Email')?.hasError('minlength')">
+              <span style="color: red;">The email requied only 80 characters.</span>
+            </div>
+            <div *ngIf="form1.get('Email')?.hasError('pattern')">
+              <span style="color: red;">The Email is not valid.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>City</label>
+              <input type="text" placeholder="Enter City Name.." formControlName="Email" class="form-control" />
+              <div *ngIf="form1.get('Email')?.errors  && isSubmitted">
+                <div *ngIf="form1.get('Email')?.hasError('required')">
+                  <span style="color: red;">Please Enter city name.</span>
+                </div>
+                           
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <select formControlName="countryname">
+                <option disabled>Select</option>
+                <option>India</option>
+                <option>UK</option>
+                <option>USA</option>
+              </select>
+              <div *ngIf="form1.get('countryname')?.hasError('required')">
+                <span style="color: red;">Please Enter Country Name.</span>
+              </div>    
+              </div>
+            </div>
+          <button type="submit" class="btn btn-lg btn-danger">Submit</button>
+    </form>
+    </div>

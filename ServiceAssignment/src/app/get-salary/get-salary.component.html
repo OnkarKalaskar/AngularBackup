@@ -1,0 +1,17 @@
+
+<br><br><br><br><br>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Serial no</th>
+        <th scope="col">salary</th>
+      </tr>
+    </thead>
+    <tbody class="Salary">
+      <tr *ngFor="let Salary of EmployeeSal">
+        <td scope="row">{{Salary.id}}</td>
+        <td>{{Salary.salary}}</td>
+      </tr>
+    </tbody>
+  </table>

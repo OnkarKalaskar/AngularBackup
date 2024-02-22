@@ -1,0 +1,24 @@
+
+
+
+
+<br><br><br><br>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Serial no</th>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
+        <th scope="col">city</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let Employee of Employees">
+        <td scope="row">{{Employee.id}}</td>
+            <td>{{Employee.name}}</td>
+            <td>{{Employee.age}}</td>
+            <td>{{Employee.city}}</td>
+      </tr>
+    </tbody>
+  </table>

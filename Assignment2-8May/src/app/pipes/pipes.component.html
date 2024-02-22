@@ -1,0 +1,32 @@
+
+<br> <br>
+<div>
+    <h3>Date pipe</h3>
+    <p>{{currentDate | date:'fullDate'}}</p>
+    <p>{{milisecDateFormat | date : 'medium'}}</p>
+    <p>{{getYear | date:'yy'}}</p>
+    <p>{{getTime | date:'Hm'}}</p>
+</div>
+
+<div>
+    <h5>Price is: {{amount | currency:'USD'}}</h5>
+    <h5>Price is: {{amount | currency:'EUR'}}</h5>
+    <h5>Price is: {{amount | currency:'INR'}}</h5>
+</div>
+
+<div>
+    <h5>percentage is : {{ newNumber | percent }}</h5>
+</div>
+
+<div>
+    <h5>Uppercase: {{word1 | uppercase }}</h5>
+    <h5>Lowercase: {{word2 | lowercase}}</h5>
+</div>
+
+<div>
+    <p>{{model | myPipe}}</p>
+    
+</div>
+
+ 
+<br><br>

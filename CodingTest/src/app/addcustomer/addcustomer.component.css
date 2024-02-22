@@ -1,0 +1,10 @@
+.parentDiv{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 800px) {
+    .parentDiv{
+        grid-template-columns: 1fr;
+    }
+}

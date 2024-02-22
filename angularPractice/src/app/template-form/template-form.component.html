@@ -1,0 +1,25 @@
+<br><br><br>
+<div >
+<form action="" (ngSubmit)="onSubmit()" #heroineForm="ngForm">
+    <label>Enter id: </label>
+    <input type="number" [(ngModel)]="product.id" name="id" #id="ngModel">
+    <div [hidden]="id.valid || id.pristine">
+        <p>Enter valid Id</p>
+    </div>
+    <br>
+    <label>Enter Name: </label>
+    <input type="text" [(ngModel)]="product.name">
+    <div>
+
+    </div>
+    <br>
+    <label>Enter Price : </label>
+    <input type="number" [(ngModel)]="product.price" name="price" id="price">
+    <button [disabled]="!heroineForm.valid">Submit</button>
+</form>
+</div>
+
+<div *ngIf="show">
+    welcome: <br>
+    <p>{{product.id}} <br> {{product.name}} <br> {{product.price}}</p>
+</div>

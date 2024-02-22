@@ -1,0 +1,170 @@
+
+<div class="container">
+    <h3>Registration form</h3>
+    <div class="row">
+        <form [formGroup]= "registrationForm" (ngSubmit) = "onFormSubmit()">
+            <!-- name -->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter Name Here.." formControlName="Name" class="form-control" />
+                        <div *ngIf="registrationForm.get('Name')?.errors && isSubmitted">
+                            <div *ngIf = "registrationForm.get('Name')?.hasError">
+                                <span style="color: red;">Please Enter name.</span>
+                            </div>
+                            <div *ngIf="registrationForm.get('Name')?.hasError('pattern')">
+                                <span style="color: red;">Please enter alphabets only</span>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- age -->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label>Age</label>
+                        <input type="number" placeholder="Enter Age Here.." formControlName="Age" class="form-control" />
+                        <div *ngIf="registrationForm.get('Age')?.errors && isSubmitted">
+                            <div *ngIf = "registrationForm.get('Age')?.hasError">
+                                <span style="color: red;">Please Enter age</span>
+                            </div>
+                            <div *ngIf="registrationForm.get('Age')?.hasError('max')">
+                                <span style="color: red;">Maximum age upto 24</span>
+                              </div>
+                              <div *ngIf="registrationForm.get('Age')?.hasError('min')">
+                                <span style="color: red;">minimum age is 18</span>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- gender -->
+            <div class="group-gap">
+                <label>Gender</label>
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="male" type="radio" class="custom-control-input" value="male" name="gender" formControlName="Gender">
+                        <label class="custom-control-label" for="male">Male</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input id="female" type="radio" class="custom-control-input" value="female" name="gender" formControlName="Gender">
+                        <label class="custom-control-label" for="female">Female</label>
+                    </div>
+
+                    <div *ngIf="registrationForm.get('Gender')?.errors && isSubmitted">
+                        <div *ngIf = "registrationForm.get('Gender')?.hasError">
+                            <span style="color: red;">Please select</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- country -->
+            <div class="col-sm-12">
+                <label>Country</label><br>
+                <select class="custom-select" (change)="changeCountry($event)" formControlName="Country">
+                    <option value="" disabled>Choose your country</option>
+                    <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+                  </select>
+                  
+                  <div *ngIf="registrationForm.get('Country')?.errors && isSubmitted">
+                    <span style="color: red;">Please select country</span>
+                  </div>
+            </div>
+<br>
+            <!-- city -->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label>City</label>
+                        <input type="text" placeholder="Enter City Here.." formControlName="City" class="form-control" />
+                        <div *ngIf="registrationForm.get('City')?.errors && isSubmitted">
+                            <div *ngIf = "registrationForm.get('City')?.hasError">
+                                <span style="color: red;">Please Enter city</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- education -->
+            <div class="group-gap">
+                <label>Education</label>
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="male" type="checkbox" class="custom-control-input" value="SSC" name="Education" formControlName="Education">
+                        <label class="custom-control-label" for="ssc">SSC</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input id="female" type="checkbox" class="custom-control-input" value="hsc" name="Education" formControlName="Education">
+                        <label class="custom-control-label" for="hsc">HSC</label>
+                    </div>
+
+                    <div *ngIf="registrationForm.get('Education')?.errors && isSubmitted">
+                        <div *ngIf = "registrationForm.get('Education')?.hasError">
+                            <span style="color: red;">Please select</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- address -->
+            <div>
+                <label>Address</label>
+                <div class="form-floating col-sm-6">                
+                    <textarea class="form-control" placeholder="Leave a comment here" id="address" name="address" formControlName="Address"></textarea>
+                  </div>
+                  <div *ngIf="registrationForm.get('Address')?.errors && isSubmitted">
+                    <div *ngIf = "registrationForm.get('Address')?.hasError">
+                        <span style="color: red;">Please Enter address</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- phone -->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label>Mobile Number</label>
+                        <input type="number" placeholder="Enter Phone Here.." formControlName="Phone" class="form-control" />
+                        <div *ngIf="registrationForm.get('Phone')?.errors && isSubmitted">
+                            <div *ngIf = "registrationForm.get('Phone')?.hasError">
+                                <span style="color: red;">Please Enter phone</span>
+                                <div *ngIf = "registrationForm.get('Phone')?.hasError('pattern')">
+                                    <span style="color: red;">Enter mobile number starting with 7/8/9</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- email -->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label>Email</label>
+                        <input type="text" placeholder="Enter Email Here.." formControlName="Email" class="form-control" />
+                        <div *ngIf="registrationForm.get('Email')?.errors && isSubmitted">
+                            <div *ngIf = "registrationForm.get('Email')?.hasError">
+                                <span style="color: red;">Please Enter Email</span>
+                                <div *ngIf = "registrationForm.get('Email')?.hasError('pattern')">
+                                    <span style="color: red;">Enter proper email id</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-danger">Submit</button>
+            <br><br><br><br><br>
+        </form>
+    </div>
+</div>

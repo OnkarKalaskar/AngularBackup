@@ -1,0 +1,8 @@
+
+<div *ngFor="let subcat of subcategories">
+    <button (click) = "currentSubcategory(subcat)">{{subcat}}</button>
+</div>
+
+<div *ngIf="display">
+ <app-superchildcomponent ></app-superchildcomponent>
+</div>

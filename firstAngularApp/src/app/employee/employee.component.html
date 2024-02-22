@@ -1,0 +1,43 @@
+<style>
+
+    body{
+        background-color: rgb(186, 173, 173);
+    }
+    header{
+        vertical-align: middle;
+        text-align: center;
+        height: 50px;
+        display: grid;
+        grid-template-columns: auto;  
+    }
+    .subHeader{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin: 20px;
+        height: 50px;
+        background-color: white;
+    }
+    .subHeader>div{
+        text-align: center;
+        background-color: orange;
+        height: 30px;
+        margin: 10px;
+    }
+
+    @media screen and (max-width:768px) {
+        main{
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<body>
+    <header>
+        <div style="background-color: blue;">Header</div>
+    </header>
+    <div class="subHeader">
+        <div>Home</div>
+        <div>Service</div>
+        <div>About us</div>
+        <div>Contact us</div>
+    </div>
+</body>

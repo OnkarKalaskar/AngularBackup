@@ -1,0 +1,26 @@
+
+<div>
+    <h1>Registration form</h1>
+
+    <div class="practiceForm">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="example-form">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Enter name: </mat-label>
+                    <input type="text" matInput formControlName="fname" name="fname" class="form-control">
+                </mat-form-field>
+                <div *ngIf="myForm.get('fname')?.errors && isSubmitted">
+                    <span style="color: red;" >Invalid data</span>
+                </div>
+                  
+                <mat-form-field class="example-full-width">
+                    <mat-label>Enter name: </mat-label>
+                    <input type="text" matInput formControlName="lname" name="lname" class="form-control">
+                </mat-form-field>
+                <div *ngIf="myForm.get('lname')?.errors && isSubmitted">
+                    <span style="color: red;" >Invalid data</span>
+                </div>
+                
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</div>
